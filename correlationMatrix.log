@@ -1,0 +1,48 @@
+Understanding Correlation Coefficients
+Correlation values range from -1 to 1:
+1 indicates a perfect positive correlation: As one variable increases, the other variable also increases.
+-1 indicates a perfect negative correlation: As one variable increases, the other variable decreases.
+0 indicates no correlation: There is no linear relationship between the variables.
+
+          AT         V        AP        RH        PE
+AT  1.000000  0.844107 -0.507549 -0.542535 -0.948128
+V   0.844107  1.000000 -0.413502 -0.312187 -0.869780
+AP -0.507549 -0.413502  1.000000  0.099574  0.518429
+RH -0.542535 -0.312187  0.099574  1.000000  0.389794
+PE -0.948128 -0.869780  0.518429  0.389794  1.000000
+
+AT (Temperature) Correlations:
+	With V (Exhaust Vacuum): 0.844 - Strong positive correlation
+	With AP (Ambient Pressure): -0.508 - Moderate negative correlation
+	With RH (Relative Humidity): -0.543 - Moderate negative correlation
+	With PE (Energy Output): -0.948 - Very strong negative correlation
+
+V (Exhaust Vacuum) Correlations:
+	With AT (Temperature): 0.844 - Strong positive correlation
+	With AP (Ambient Pressure): -0.414 - Moderate negative correlation
+	With RH (Relative Humidity): -0.312 - Weak negative correlation
+	With PE (Energy Output): -0.870 - Strong negative correlation
+
+AP (Ambient Pressure) Correlations:
+	With AT (Temperature): -0.508 - Moderate negative correlation
+	With V (Exhaust Vacuum): -0.414 - Moderate negative correlation
+	With RH (Relative Humidity): 0.100 - Very weak positive correlation
+	With PE (Energy Output): 0.518 - Moderate positive correlation
+
+RH (Relative Humidity) Correlations:
+	With AT (Temperature): -0.543 - Moderate negative correlation
+	With V (Exhaust Vacuum): -0.312 - Weak negative correlation
+	With AP (Ambient Pressure): 0.100 - Very weak positive correlation
+	With PE (Energy Output): 0.390 - Weak positive correlation
+
+PE (Energy Output) Correlations:
+	With AT (Temperature): -0.948 - Very strong negative correlation
+	With V (Exhaust Vacuum): -0.870 - Strong negative correlation
+	With AP (Ambient Pressure): 0.518 - Moderate positive correlation
+	With RH (Relative Humidity): 0.390 - Weak positive correlation
+
+
+Temperature (AT) and Energy Output (PE) have a very strong negative correlation (-0.948), meaning as the temperature increases, the energy output significantly decreases.
+Exhaust Vacuum (V) and Energy Output (PE) also show a strong negative correlation (-0.870).
+Ambient Pressure (AP) and Energy Output (PE) show a moderate positive correlation (0.518), indicating that higher ambient pressure is moderately associated with higher energy output.
+Relative Humidity (RH) and Energy Output (PE) have a weak positive correlation (0.390).
