@@ -73,6 +73,8 @@ print(f"Linear Regression Cross-Validation RMSE: {lr_mean_cv_rmse:.2f}")
 print(f"Linear Regression Cross-Validation R²: {lr_mean_cv_r2:.2f}")
 mu.chart_predictions(y_test,y_pred, 'Linear Regression - Actual vs. Predicted Values with Error Bars (Residuals)')
 
+#mu.explain_model(X, X_train, X_test, lr_model)
+
 # Calculate Cross-validation
 """ kf = KFold(n_splits=5, shuffle=True, random_state=42)
 cv_scores_lr = cross_val_score(lr_model, X, y, cv=kf, scoring='neg_mean_squared_error')

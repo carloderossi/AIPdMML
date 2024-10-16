@@ -2,6 +2,7 @@ from sklearn.model_selection import cross_val_score, cross_val_predict
 from sklearn.metrics import mean_squared_error, r2_score, make_scorer
 import numpy as np
 import matplotlib.pyplot as plt
+from lime.lime_tabular import LimeTabularExplainer
 
 # Define the RMSE scorer
 def rmse(y_true, y_pred):
@@ -106,4 +107,28 @@ def chart_predictions(y_test, y_pred, title):
     manager.set_window_title(title)
     plt.show()
     
-    
+def explain_model(X, X_train, X_test, model):
+    # Initialize LIME explainer
+    explainer = LimeTabularExplainer(
+        X_train.values,
+        feature_names=X.columns,
+        class_names=['PE'],
+        mode='regression'
+    )
+
+    # Generate explanation
+    i = 10  # Index of the test sample to explain
+    exp = explainer.explain_instance(X_test.values[i], model.predict, num_features=4)
+
+    # Print explanation to console
+    print(exp.as_list())
+
+    """
+    # Save explanation to file
+    with open("lime_explanation.txt", "w") as file:
+        for feature, weight in exp.as_list():
+            file.write(f"{feature}: {weight}\n")
+    """
+    # Plot explanation
+    exp.as_pyplot_figure()
+    plt.show()
