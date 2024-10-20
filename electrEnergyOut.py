@@ -30,7 +30,7 @@ data['HI'] = du.calculate_heat_index(data['AT'], data['RH'])
 print(data.head(5))
 
 # Print data analysis
-#du.analyse_dataset(data)
+du.analyse_dataset(data)
 
 print()
 data = du.clean_data(data)
