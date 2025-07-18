@@ -5,6 +5,7 @@
 **Carlo De Rossi, October 2024**
 
 ---
+![correlation](./correlation.jpg)
 
 ## Assignment
 
